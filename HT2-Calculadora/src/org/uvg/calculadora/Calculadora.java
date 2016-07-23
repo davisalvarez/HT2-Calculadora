@@ -4,12 +4,15 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import org.uvg.stack.*;
 public class Calculadora {
 	
 	private ArrayList<String[]> expresiones;
+	private Stack<String> stackOperandos;
 	
 	public Calculadora(){
 		expresiones = new ArrayList<String[]>();
+		stackOperandos = new StackArrayList<String>();
 	}
 	
 	public void lectorArchivo(){
@@ -21,7 +24,6 @@ public class Calculadora {
 			datosLeidos = new FileReader (datos);
 			br = new BufferedReader(datosLeidos);
 			
-			//String expresion = br.readLine(); 
 			String linea;
 			while((linea=br.readLine())!=null){
             		String [] expresionDividida = linea.split(" ");
@@ -41,6 +43,19 @@ public class Calculadora {
 	}
 	
 	public int realizaOperacion(){
+		for(String[] ln: expresiones){//
+			this.ingresarDatosAlStack(ln);
+			
+		}
 		return 0;
 	}
+	
+	public void ingresarDatosAlStack(String[] funcion){
+		for(String elemento: funcion){
+			//
+			stackOperandos.push(elemento);
+		}
+		
+	}
+	
 }
