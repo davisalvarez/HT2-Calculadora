@@ -19,8 +19,7 @@ public class StackVector<E> implements Stack<E>{
 	@Override
 	public E pop() {
 		// TODO Auto-generated method stub
-		this.data.remove(data.size()-1);
-		return null;
+		return this.data.remove(data.size()-1);
 	}
 
 	@Override
