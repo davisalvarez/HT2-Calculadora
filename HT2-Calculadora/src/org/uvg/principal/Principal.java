@@ -7,6 +7,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		Calculadora cal = new Calculadora();
 		cal.lectorArchivo();
+		cal.realizaOperaciones();
 	}
 
 }
